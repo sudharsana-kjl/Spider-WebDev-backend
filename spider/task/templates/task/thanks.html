@@ -1,1 +1,12 @@
 <h1>Thanks!</h1>
+{{passcode}}
+{% for obj in object_list %}
+<h2>Student Details</h2>
+<strong>Name: </strong>{{obj.name}}<br>
+<strong>Roll No: </strong>{{obj.your_rollno}}<br>
+<strong>Department: </strong>{{obj.your_dept}}<br>
+<strong>Email: </strong>{{obj.your_email}}<br>
+<strong>Address: </strong>{{obj.your_address}}<br>
+<strong>About: </strong>{{obj.your_about}}<br>
+
+{% endfor %}

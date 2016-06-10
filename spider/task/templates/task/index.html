@@ -1,5 +1,6 @@
-<form action="/task/thanks/" method="POST">
+<form action="/task/" method="POST" id="records">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit" />
 </form>
+
