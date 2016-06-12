@@ -1,5 +1,5 @@
 <h1>Thanks!</h1>
-{{passcode}}
+<strong> {{pcode}} </strong><br>
 {% for obj in object_list %}
 <h2>Student Details</h2>
 <strong>Name: </strong>{{obj.name}}<br>
@@ -7,6 +7,9 @@
 <strong>Department: </strong>{{obj.your_dept}}<br>
 <strong>Email: </strong>{{obj.your_email}}<br>
 <strong>Address: </strong>{{obj.your_address}}<br>
-<strong>About: </strong>{{obj.your_about}}<br>
+<strong>About: </strong>{{obj.your_about}}<br><br>
+
+
+<button ><a href="{% url 'editStud' obj.id %}">Edit</a></button>
 
 {% endfor %}

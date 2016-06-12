@@ -1,6 +1,18 @@
 <form action="/task/" method="POST" id="records">
     {% csrf_token %}
+    
     {{ form.as_p }}
+    
+<!--<h2>Student Details</h2>
+<strong>Name: </strong><input type="text" value={{obj.name}}></input><br><br>
+<strong>Roll No: </strong><input type="text" value={{obj.your_rollno}}></input><br>
+<strong>Department: </strong><input type="text" value={{obj.your_dept}}></input><br>
+<strong>Email: </strong><input type="text" value={{obj.your_email}}></input><br>
+<strong>Address: </strong><input type="text" value={{obj.your_address}}></input><br>
+<strong>About: </strong><input type="text" value={{obj.your_about}}></input><br>-->
+
+
+
     <input type="submit" value="Submit" />
 </form>
 

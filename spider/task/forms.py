@@ -1,18 +1,34 @@
-from django.forms import ModelForm
-from .models import StudentForm,SearchModel
+from django import forms
+from .models import StudentForm,SearchModel,EditModel
 
-class NameForm(ModelForm):
+
+class NameForm(forms.ModelForm):
             class Meta:
-	             model = StudentForm
-	             exclude = ['your_code']
-	#['your_name','your_rollno','your_dept','your_email','your_address','your_about']
+                   model = StudentForm
+                   fields = '__all__'
+                   widgets = {'passcode': forms.HiddenInput()}
+
+                   
+      #['your_name','your_rollno','your_dept','your_email','your_address','your_about']
     
 
-class SearchForm(ModelForm):
+class SearchForm(forms.ModelForm):
             class Meta:
-            	model = SearchModel
-            	fields = '__all__'
+                  model = SearchModel
+                  fields = '__all__'
+
+
+class EditForm(forms.ModelForm):
+            class Meta:
+                  model = StudentForm
+                  exclude = ['your_rollno']
+                  widgets = {'passcode': forms.HiddenInput()}
+
+class PassForm(forms.ModelForm):
+            class Meta:
+                  model = EditModel
+                  fields='__all__'
 
             #class Meta:
-            #	model = StudentForm
-            #	fields = ['your_rollno']
+            #     model = StudentForm
+            #     fields = ['your_rollno']

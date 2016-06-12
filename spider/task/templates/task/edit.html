@@ -1,0 +1,10 @@
+
+
+<form action=""  method = "POST" >
+	{%csrf_token%}
+Roll No :	{{rollno}}
+	{{form.as_p}}
+	{{forms.as_p}}
+
+	<input type="submit" value="Edit"/>
+</form>

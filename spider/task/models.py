@@ -15,11 +15,11 @@ class StudentForm(models.Model):
     your_rollno = models.IntegerField(unique=True,validators=[MinValueValidator(100000000),MaxValueValidator(999999999)])
     CHOICES=[('CSE','CSE'),
          ('ECE','ECE'),('EEE','EEE'),('CHEM','CHEM'),('ICE','ICE'),('PROD','PROD'),('META','META')]
-    your_dept = models.CharField(max_length=3,choices=CHOICES)
+    your_dept = models.CharField(max_length=4,choices=CHOICES)
     your_email = models.EmailField(validators = [clean_youremail])
     your_address = models.CharField(max_length=200,blank=False)
     your_about = models.CharField(max_length=300)
-    passcode = models.IntegerField(unique=True)
+    passcode = models.CharField(max_length=10,default = 0)
 
     def __unicode__(self):
         return self.name
@@ -30,6 +30,8 @@ class StudentForm(models.Model):
 class SearchModel(models.Model):
     search_query =models.IntegerField()
     
+class EditModel(models.Model):
+    passcod = models.CharField(max_length=10)
 
 
 
